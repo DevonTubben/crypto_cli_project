@@ -6,7 +6,9 @@ class CLI
 
     def start 
         puts "Welcome to Crypto! Let's start with your name:"
+        API.get_data
         greet(user_input)
+        
     end 
 
     def user_input 
