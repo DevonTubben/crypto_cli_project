@@ -20,4 +20,10 @@ class Crypto
     def self.all 
         @@all 
     end 
+
+# a method that accepts the cryptos name and finds the object with that name
+def self.find_crypto(crypto_name)
+    self.all.find  do |crypto| #@@all.each.find
+        crypto.name == crypto_name
+    end 
 end 

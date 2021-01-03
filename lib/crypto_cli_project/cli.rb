@@ -24,22 +24,35 @@ class CLI
         ["Bitcoin", "Ethereum", "Litecoin"].each.with_index(1) do |cryptos, i|
         puts "#{i}. #{cryptos}"
     end 
+    crypto_selection
+end 
 
     def goodbye 
         puts "Thanks for checking out the different cryptos! Bye!"
     end 
 
     def invalid 
-        "Invalid output. Please try again"
+        puts "Invalid output. Please try again"
         menu 
     end 
     #based on our user selection, either show a list of crypto, give them an error message if it doesnt understand, or exit the program.
+    
+    def crypto_selection
+        puts "Select a Crypto to learn more details."
+
+        selection = user_input 
+        Crypto.find_crypto(selection)
+
+        #query our crypto class to find the cryptos details
+    end 
+
     def menu
         selection = user_input 
 
         if selection == 'y' 
             # print crypto list 
             crypto_list
+            menu
         elsif selection == 'exit'
             # give the user a goodbye message
             goodbye 
@@ -47,5 +60,6 @@ class CLI
             #invalid output and make the user select again
             invalid
     end 
+
 end 
 end 
