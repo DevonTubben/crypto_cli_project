@@ -3,13 +3,13 @@
 class Crypto
 
     @@all = []
-    attr_accessor :name, :symbol, :price, :market_cap
+    attr_accessor :name, :symbol, :price, :marketcap
 
-    def initialize(name, symbol, price, market_cap)
+    def initialize(name, symbol, price, marketcap)
         @name = name 
         @symbol = symbol 
         @price = price 
-        @market_cap = market cap 
+        @marketcap = market cap 
         save
     end 
 
@@ -26,4 +26,5 @@ def self.find_crypto(crypto_name)
     self.all.find  do |crypto| #@@all.each.find
         crypto.name == crypto_name
     end 
+end 
 end 
